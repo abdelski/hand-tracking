@@ -36,18 +36,18 @@ class faceMeshDetection():
 
 
 def main():
-    # cap = cv2.VideoCapture(0)
-    cap = cv2 .VideoCapture("pose-video/running.mp4")
+    cap = cv2.VideoCapture(0)
+    # cap = cv2 .VideoCapture("pose-video/running.mp4")
     pTime = 0
     detector = faceMeshDetection()
     while True:
         success, img = cap.read()
-        scale_percent = 20  # percent of original size
-        width = int(img.shape[1] * scale_percent / 100)
-        height = int(img.shape[0] * scale_percent / 100)
-        dim = (width, height)
-        # resize image
-        img = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
+        # scale_percent = 20  # percent of original size
+        # width = int(img.shape[1] * scale_percent / 100)
+        # height = int(img.shape[0] * scale_percent / 100)
+        # dim = (width, height)
+        # # resize image
+        # img = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
 
         img, faces = detector.findFaces(img)
         print(len(faces))
